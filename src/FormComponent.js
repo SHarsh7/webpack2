@@ -33,7 +33,7 @@ const FormComponent = () => {
     };
 
     return (
-        <div>
+        <>
             <form style={formStyle} onSubmit={handleSubmit}>
                 <input style={inputStyle} type="text" id="firstName" name="firstName" placeholder="First Name" onChange={(e) => setFirstName(e.target.value)} />
                 <input style={inputStyle} type="text" id="lastName" name="lastName" placeholder="Last Name" onChange={(e) => setLastName(e.target.value)} />
@@ -49,7 +49,7 @@ const FormComponent = () => {
                     <p>Age: {age}</p>
                 </div>
             )}
-        </div>
+        </>
     );
 };
 
