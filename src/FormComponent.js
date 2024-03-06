@@ -43,10 +43,10 @@ const FormComponent = () => {
             </form>
             {submitted && (
                 <div style={boxStyle}>
-                    <p>First Name: {firstName}</p>
-                    <p>Last Name: {lastName}</p>
-                    <p>Email: {email}</p>
-                    <p>Age: {age}</p>
+                    <p>First Name: {firstName?firstName:""}</p>
+                    <p>Last Name: {lastName?lastName:""}</p>
+                    <p>Email: {email?email:""}</p>
+                    <p>Age: {age?age:""}</p>
                 </div>
             )}
         </>
