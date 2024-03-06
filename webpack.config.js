@@ -5,17 +5,13 @@ module.exports = {
     output: {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist'),
-        library: {
-            name: 'FormComponent',
-            type: 'umd',
-            export: 'default',
-        },
-        libraryTarget: 'commonjs2',
+        libraryTarget:"umd",
+        library:"formcomponent",
         globalObject: 'this',
     },
     externals: {
-        'react': 'react' ,
-        'react-dom':'react-dom'
+        react: 'react',
+
     },
     module: {
         rules: [
