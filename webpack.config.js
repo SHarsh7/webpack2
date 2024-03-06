@@ -13,8 +13,7 @@ module.exports = {
         globalObject: 'this',
     },
     externals: {
-        'react': 'react',
-        'react-dom' : 'react-dom'
+        react: 'react',
     },
     module: {
         rules: [
