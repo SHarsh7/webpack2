@@ -10,10 +10,12 @@ module.exports = {
             type: 'umd',
             export: 'default',
         },
+        libraryTarget: 'commonjs2',
         globalObject: 'this',
     },
     externals: {
-        react: 'react',
+        'react': 'react' ,
+        'react-dom':'react-dom'
     },
     module: {
         rules: [
