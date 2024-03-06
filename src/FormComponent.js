@@ -35,10 +35,10 @@ const FormComponent = () => {
     return (
         <>
             <form style={formStyle} onSubmit={handleSubmit}>
-                <input style={inputStyle} type="text" id="firstName" name="firstName" placeholder="First Name" onChange={(e) => setFirstName(e.target.value)} />
-                <input style={inputStyle} type="text" id="lastName" name="lastName" placeholder="Last Name" onChange={(e) => setLastName(e.target.value)} />
-                <input style={inputStyle} type="email" id="email" name="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
-                <input style={inputStyle} type="number" id="age" name="age" placeholder="Age" onChange={(e) => setAge(e.target.value)} />
+                <input style={inputStyle} value={firstName} type="text" id="firstName" name="firstName" placeholder="First Name" onChange={(e) => setFirstName(e.target.value)} />
+                <input style={inputStyle} value={lastName} type="text" id="lastName" name="lastName" placeholder="Last Name" onChange={(e) => setLastName(e.target.value)} />
+                <input style={inputStyle} value={email} type="email" id="email" name="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
+                <input style={inputStyle} value={age} type="number" id="age" name="age" placeholder="Age" onChange={(e) => setAge(e.target.value)} />
                 <input style={inputStyle} type="submit" value="Submit" />
             </form>
             {submitted && (
