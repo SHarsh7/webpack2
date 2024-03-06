@@ -14,6 +14,7 @@ module.exports = {
     },
     externals: {
         react: 'react',
+        'react-native':'react-native'
     },
     module: {
         rules: [

@@ -19,6 +19,7 @@
     "webpack-cli": "^5.1.4"
   },
   "peerDependencies": {
-    "react":"*"
+    "react":"*",
+    "react-native":"*"
   }
 }
