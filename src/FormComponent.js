@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const FormComponent = () => {
+const FormComponent = ({platform} ) => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
@@ -35,11 +35,11 @@ const FormComponent = () => {
     return (
         <>
             <form style={formStyle} onSubmit={handleSubmit}>
-                <input style={inputStyle} value={firstName} type="text" id="firstName" name="firstName" placeholder="First Name" onChange={(e) => setFirstName(e.target.value)} />
-                <input style={inputStyle} value={lastName} type="text" id="lastName" name="lastName" placeholder="Last Name" onChange={(e) => setLastName(e.target.value)} />
-                <input style={inputStyle} value={email} type="email" id="email" name="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
-                <input style={inputStyle} value={age} type="number" id="age" name="age" placeholder="Age" onChange={(e) => setAge(e.target.value)} />
-                <input style={inputStyle} type="submit" value="Submit" />
+                <TextInputOrInput  platform={platform} style={inputStyle} value={firstName} type="text" id="firstName" name="firstName" placeholder="First Name" onChange={(e) => setFirstName(e.target.value)} />
+                <TextInputOrInput  platform={platform} style={inputStyle} value={lastName} type="text" id="lastName" name="lastName" placeholder="Last Name" onChange={(e) => setLastName(e.target.value)} />
+                <TextInputOrInput  platform={platform} style={inputStyle} value={email} type="email" id="email" name="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
+                <TextInputOrInput  platform={platform} style={inputStyle} value={age} type="number" id="age" name="age" placeholder="Age" onChange={(e) => setAge(e.target.value)} />
+                <TextInputOrInput  platform={platform} style={inputStyle} type="submit" value="Submit" />
             </form>
             {submitted && (
                 <div style={boxStyle}>
@@ -52,5 +52,27 @@ const FormComponent = () => {
         </>
     );
 };
-
+const TextInputOrInput = ({ platform, value, onChange, placeholder }) => {
+    if (platform === 'react-native') {
+      // Render TextInput for React Native
+      return (
+        <TextInput
+          type="text"
+          placeholder={placeholder}
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+        />
+      );
+    } else {
+      // Render input for React.js
+      return (
+        <input
+          type="text"
+          placeholder={placeholder}
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+        />
+      );
+    }
+  };
 export default FormComponent;
