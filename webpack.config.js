@@ -5,9 +5,15 @@ module.exports = {
     output: {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist'),
-        library: 'FormComponent',
-        libraryTarget: 'umd',
+        library: {
+            name: 'FormComponent',
+            type: 'umd',
+            export: 'default',
+        },
         globalObject: 'this',
+    },
+    externals: {
+        react: 'react',
     },
     module: {
         rules: [
@@ -16,6 +22,9 @@ module.exports = {
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env', '@babel/preset-react'],
+                    },
                 },
             },
         ],
